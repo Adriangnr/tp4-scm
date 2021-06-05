@@ -9,8 +9,8 @@ jobs:
      - image: gnradrian/java11-gradle7
    steps:
      - checkout
-     - run: java --version
-     - run: gradle --version
+     - run: gradle build
+     - run: gradle bootRun
   
   #test:
   
