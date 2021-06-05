@@ -1,0 +1,28 @@
+# Java Gradle CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-java/ for more details
+#
+version: 2
+jobs:
+  build:
+   docker: 
+     - image: gnradrian/java11-gradle7
+   steps:
+     - checkout
+     - run: java --version
+     - run: gradle --version
+  
+  #test:
+  
+  #validate:
+  
+  #deploy:
+
+workflows:
+  version: 2
+  tp4_scm_workflows:
+    jobs:
+      - build
+      #- test
+      #- validate
+      #- deploy
