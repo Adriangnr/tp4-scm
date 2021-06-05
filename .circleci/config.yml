@@ -6,8 +6,8 @@ version: 2
 jobs:
   build:
    docker: 
-     - image: gradle
      - image: circleci/openjdk
+     - image: gradle
    steps:
      - checkout
      - run: java --version
