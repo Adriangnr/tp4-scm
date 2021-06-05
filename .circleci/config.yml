@@ -10,13 +10,24 @@ jobs:
    steps:
      - checkout
      - run: gradle build
-     - run: gradle bootRun
+     - run: gradle jar
+     - run: gradle check
   
-  #test:
+test:
+  docker: 
+     - image: gnradrian/java11-gradle7
+  steps:
+     - checkout
+     - run: gradle test
   
-  #validate:
-  
-  #deploy:
+validate:
+  docker: 
+     - image: gnradrian/java11-gradle7
+  steps:
+     - checkout
+     - run: gradle check
+
+#deploy:
 
 workflows:
   version: 2
