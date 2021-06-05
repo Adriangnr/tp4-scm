@@ -6,7 +6,7 @@ version: 2
 jobs:
   build:
    docker: 
-     - image: quintoandar/docker-jdk-gradle
+     - image: gnradrian/java11-gradle7
    steps:
      - checkout
      - run: java --version
