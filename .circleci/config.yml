@@ -5,18 +5,24 @@
 version: 2
 jobs:
   build:
-    docker:
-      - image: circleci/openjdk
+   docker: 
+     - image: circleci/openjdk
+   steps:
+     - checkout
+     - run: gradle clean
+     - run: gradle build
+  
+  #test:
+  
+  #validate:
+  
+  #deploy:
 
-    working_directory: ~/tp4-scm
-
-    steps:
-      - checkout
-      - run: gradle clean
-      - run: gradle build
-      - run: gradle bootRun
-  test:
-    docker:
-      - image: circleci/openjdk
-    steps:
-      - run: gradle test
+workflows:
+  version: 2
+  tp4_scm_workflows:
+    jobs:
+      - build
+      #- test
+      #- validate
+      #- deploy
