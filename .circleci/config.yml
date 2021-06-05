@@ -5,27 +5,27 @@
 version: 2
 jobs:
   build:
-   docker: 
-     - image: gnradrian/java11-gradle7
-   steps:
-     - checkout
-     - run: gradle build
-     - run: gradle jar
-     - run: gradle check
+    docker: 
+      - image: gnradrian/java11-gradle7
+    steps:
+      - checkout
+      - run: gradle build
+      - run: gradle jar
+      - run: gradle check
   
-test:
-  docker: 
-     - image: gnradrian/java11-gradle7
-  steps:
+  test:
+    docker: 
+      - image: gnradrian/java11-gradle7
+    steps:
      - checkout
      - run: gradle test
   
-validate:
-  docker: 
-     - image: gnradrian/java11-gradle7
-  steps:
-     - checkout
-     - run: gradle check
+  validate:
+    docker: 
+      - image: gnradrian/java11-gradle7
+    steps:
+      - checkout
+      - run: gradle check
 
 #deploy:
 
