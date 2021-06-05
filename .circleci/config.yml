@@ -9,7 +9,6 @@ jobs:
      - image: circleci/openjdk
    steps:
      - checkout
-     - run: gradle clean
      - run: gradle build
   
   #test:
