@@ -9,8 +9,8 @@ jobs:
      - image: circleci/openjdk
    steps:
      - checkout
-     - run: pwd
-     - run: echo "holaaaa"
+     - run: java --version
+     - run: gradle --version
   
   #test:
   
