@@ -44,10 +44,10 @@ workflows:
       - validate
       - test:
           requires:
-          - build
+          - validate
       - build:
           requires:
-          - validate 
+          - test 
       - deploy:
           requires:
-          - test
+          - build
