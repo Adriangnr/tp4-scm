@@ -1,2 +1,2 @@
 #Procfile
-web: ./gradlew bootRun -Pargs="--server.port=80"
+web: java -jar build/libs/spring-boot-jpetstore.jar
