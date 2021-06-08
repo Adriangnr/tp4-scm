@@ -42,12 +42,12 @@ workflows:
   tp4_scm_workflows:
     jobs:
       - validate
-      - build:
-          requires:
-          - validate
       - test:
           requires:
-          - build 
+          - build
+      - build:
+          requires:
+          - validate 
       - deploy:
           requires:
           - test
