@@ -2,7 +2,7 @@
 #
 # Check https://circleci.com/docs/2.0/language-java/ for more details
 #
-version: 2
+version: 2.1
 orbs:
   heroku: circleci/heroku@1.2.6
 
@@ -35,6 +35,10 @@ jobs:
     steps:
       - checkout
       - heroku/install
+      - run:
+          command: |
+            echo "The command above installs Heroku, the command below deploys.
+            What you do inbetween is up to you!"
       - heroku/deploy-via-git
 
 workflows:
