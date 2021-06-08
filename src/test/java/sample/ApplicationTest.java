@@ -21,4 +21,25 @@ class ApplicationTest {
             restTemplate.getForObject("http://localhost:" + port + "/category/FISH", String.class))
         .contains("Angelfish");
   }
+
+  @Test
+  public void dogs() {
+    assertThat(
+            restTemplate.getForObject("http://localhost:" + port + "/category/DOGS", String.class))
+            .contains("Chihuahua");
+  }
+
+  @Test
+  public void cats() {
+    assertThat(
+            restTemplate.getForObject("http://localhost:" + port + "/category/CATS", String.class))
+            .contains("Persian");
+  }
+
+  @Test
+  public void birds() {
+    assertThat(
+            restTemplate.getForObject("http://localhost:" + port + "/category/BIRDS", String.class))
+            .contains("Finch");
+  }
 }
