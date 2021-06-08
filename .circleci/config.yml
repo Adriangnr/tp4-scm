@@ -31,12 +31,11 @@ jobs:
       - run: gradle check
 
   deploy:
-    - heroku/deploy-via-git
-        requires:
-          - build
-        filters:
-          branches:
-            only: master
+    executor: heroku/default
+    steps:
+      - checkout
+      - heroku/install
+      - heroku/deploy-via-git
 
 workflows:
   version: 2
