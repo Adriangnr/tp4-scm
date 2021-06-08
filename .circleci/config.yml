@@ -3,6 +3,9 @@
 # Check https://circleci.com/docs/2.0/language-java/ for more details
 #
 version: 2
+orbs:
+  heroku: circleci/heroku@1.2.6
+
 jobs:
   build:
     docker: 
@@ -27,7 +30,13 @@ jobs:
       - checkout
       - run: gradle check
 
-#deploy:
+  deploy:
+    - heroku/deploy-via-git
+        requires:
+          - build
+        filters:
+          branches:
+            only: master
 
 workflows:
   version: 2
@@ -36,4 +45,4 @@ workflows:
       - build
       - test
       - validate
-      #- deploy
+      - deploy
