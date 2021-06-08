@@ -41,7 +41,13 @@ workflows:
   version: 2
   tp4_scm_workflows:
     jobs:
-      - build
-      - test
       - validate
-      - deploy
+      - build:
+          requires:
+          - validate
+      - test:
+          requires:
+          - build 
+      - deploy:
+          requires:
+          - build
