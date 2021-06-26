@@ -15,7 +15,14 @@ pipeline {
             }
         }
 
-         stage('test') {
+        stage('analyze') {
+            steps {
+                sh 'chmod +x gradlew'
+                sh './gradlew  sonarqube'
+            }
+        }
+
+        stage('test') {
                     steps {
                         sh 'chmod +x gradlew'
                         sh './gradlew test'
