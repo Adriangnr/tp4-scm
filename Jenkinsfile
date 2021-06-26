@@ -23,13 +23,20 @@ pipeline {
         }
 
         stage('test') {
-                    steps {
-                        sh 'chmod +x gradlew'
-                        sh './gradlew test'
-                    }
-         }
+            steps {
+                sh 'chmod +x gradlew'
+                sh './gradlew test'
+            }
+        }
 
-         stage('build') {
+        stage('coverage') {
+            steps {
+                sh 'chmod +x gradlew'
+                sh './gradlew -i test jacocoTestReport'
+            }
+        }
+
+        stage('build') {
                      steps {
                          sh 'chmod +x gradlew'
                          sh './gradlew build'
