@@ -10,6 +10,7 @@ pipeline {
 
         stage('validate') {
             steps {
+                sh 'chmod +x gradlew'
                 sh './gradlew check'
             }
         }
