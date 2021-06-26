@@ -10,7 +10,7 @@ pipeline {
 
         stage('validate') {
             steps {
-                gradle check
+                sh 'gradle check'
             }
         }
     }
